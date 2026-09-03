@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  box-sizing: border-box;
+}
+
+.mono {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+}
+
+body {
+  @apply bg-stone-100 dark:bg-slate-950 text-slate-900 dark:text-slate-100;
+}
+
+/* Thin, square scrollbar — no rounded thumb */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-stone-200 dark:bg-slate-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-stone-400 dark:bg-slate-700;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-accent-600;
+}
+
+.label-caps {
+  @apply uppercase text-[11px] font-semibold tracking-widest text-slate-500 dark:text-slate-400;
+}
+
+.panel-header {
+  @apply border-b border-slate-300 dark:border-slate-700 px-4 py-2.5 flex items-center justify-between;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+.live-dot {
+  animation: blink 1.4s ease-in-out infinite;
+}
